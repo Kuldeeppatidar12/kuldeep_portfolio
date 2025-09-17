@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuldeep Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+    body {
+      background-color: #0a1f44; /* dark blue background */
+      color: #f1f1f1;
+      overflow-x: hidden;  
+    }
+    a {
+      text-decoration: none;
+      color: #f1f1f1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 10vh;
+      width: 100%;
+      background-color: #112d60; /* navy */
+      padding: 0 40px;
+      z-index: 10;
+    }
+    .name h1 {
+      font-size: 22px;
+      color: #f1f1f1;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-menu a p {
+      color: #f1f1f1;
+      font-weight: 500;
+    }
+    .hire-btn {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f39c12; /* orange */
+      color: #0a1f44;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .hire-btn:hover {
+      background-color: #d87c0e;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
+    main {
+      height: 100vh;
+      display: flex;
+      padding-top: 10vh;
+    }
+    .left, .right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .left img {
+      width: 330px;
+      border-radius: 40%;
+      box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);
+    }
+    .context {
+      width: 70%;
+    }
+    .context h1 {
+      font-size: 50px;
+      color: #f39c12;
+    }
+    .context p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .context button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f39c12;
+      color: #0a1f44;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .context button:hover {
+      background-color: #d87c0e;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Section Headings */
+    .heading h1, .header h1, .head h1 {
+      font-size: 45px;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    /* About */
+    .about {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-content {
+      width: 75%;
+      padding: 30px;
+      border-radius: 15px;
+      background: #112d60;
+      color: #f1f1f1;
+      text-align: justify;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transition: 0.3s;
+    }
+    .about-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
+
+    /* Services */
+    .services {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .card {
+      background: #112d60;
+      border-radius: 15px;
+      padding: 30px;
+      color: #f1f1f1;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .card h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Contact */
+    .contact {
+      min-height: 70vh;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 40px;
+      justify-content: center;
+    }
+    .left-contact, .contact-right {
+      flex: 1;
+      min-width: 300px;
+    }
+    .left-center {
+      max-width: 400px;
+      margin: auto;
+      text-align: justify;
+    }
+    .left-center h1 {
+      font-size: 50px;
+      color: #f39c12;
+      margin-bottom: 20px;
+    }
+    .social-icons {
+      margin-top: 25px;
+    }
+    .social-icons img {
+      width: 40px;
+      margin-right: 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 350px;
+      margin: auto;
+    }
+    .contact-form label {
+      color: #f1f1f1;
+      font-weight: 500;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #0a1f44;
+      border: 2px solid #f39c12;
+      color: #f1f1f1;
+    }
+    #contact-btn {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f39c12;
+      color: #0a1f44;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #contact-btn:hover {
+      background-color: #d87c0e;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 10vh;
+      background-color: #112d60;
+      color: #f1f1f1;
+      padding: 0 30px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        text-align: center;
+      }
+      .left, .right {
+        width: 100%;
+      }
+      .context {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="name" id="home">
+      <a href="#home"><h1>Kuldeep Patidar</h1></a>
+    </div>
+    <div class="nav-menu">
+      <a href="#home"><p>Home</p></a>
+      <a href="#about"><p>About</p></a>
+      <a href="#service"><p>Services</p></a>
+      <a href="#contact"><p>Contact</p></a>
+      <a href="#contact"><button class="hire-btn">Hire Me</button></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="left">
+      <img src="profile.jpeg" alt="Kuldeep Profile">
+    </div>
+    <div class="right">
+      <div class="context">
+        <h1>I'm a Full Stack Developer</h1>
+        <p>
+          I am a passionate Full Stack Developer with expertise in building responsive and scalable web applications. 
+          I enjoy working on both frontend and backend, using modern technologies like HTML, CSS, JavaScript, React, Node.js, and databases. 
+          My goal is to create clean, user-friendly, and efficient digital solutions that bring ideas to life.
+        </p>
+        <br>
+       <button><a href="Resume .pdf">My Resume></button></a>
+      </div>
+    </div>
+  </main>
+
+  <div class="heading" id="about">
+    <h1>About</h1>
+  </div>
+  <div class="about">
+    <div class="about-content">
+      <p>Dear Visitor,</p><br>
+      <p>
+        I am a passionate Full Stack Developer with a strong foundation in both frontend and backend technologies. 
+        I enjoy building clean, responsive, and user-friendly web applications that solve real-world problems. 
+        My expertise includes HTML, CSS, JavaScript, React, Node.js, Express, and SQL/NoSQL databases.
+      </p><br>
+      <p>
+        I love exploring new technologies and continuously improving my skills to stay updated in the fast-changing tech world. 
+        Coding for me is not just a profession but also a passion—I enjoy turning ideas into reality through code.
+      </p><br>
+      <p>
+        When I’m not coding, I like learning new tools, contributing to projects, and enhancing my problem-solving skills. 
+        My goal is to grow as a developer and work on projects that make an impact.
+      </p>
+      <br>
+      <p>Warmly,</p>
+      <p>Kuldeep</p>
+    </div>
+  </div>
+
+  <div class="header" id="service">
+    <h1>Services</h1>
+  </div>
+  <div class="services">
+    <div class="services-grid">
+      <div class="card"><h1>🌐 Web Development</h1><p>Building responsive, scalable websites with modern frameworks.</p></div>
+      <div class="card"><h1>🔗 API Integration</h1><p>Connecting third-party services and custom APIs seamlessly.</p></div>
+      <div class="card"><h1>🗄️ Database Design</h1><p>Efficient schema design with SQL & NoSQL for performance.</p></div>
+      <div class="card"><h1>🎨 UI Optimization</h1><p>Improving user experience with clean, interactive designs.</p></div>
+      <div class="card"><h1>⚙️ promotion Video</h1><p>Promotional video for the business and the intitutes.</p></div>
+      <div class="card"><h1>🛠️ video editing</h1><p>Profeesion video editing with the colour grading </p></div>
+    </div>
+  </div>
+
+  <div class="head" id="contact">
+    <h1>Contact</h1>
+  </div>
+  <div class="contact">
+    <div class="left-contact">
+      <div class="left-center">
+        <h1>Get in Touch</h1>
+        <p>
+          As a passionate Full Stack Developer, I enjoy turning ideas into real, functional, and user-friendly applications. 
+          Whether you’re looking for someone to build a website, develop a complete application, or collaborate on exciting projects, I’d love to connect.
+        </p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <form class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <label for="message">Ask Question</label>
+        <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+        <button id="contact-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <span>@Copyright - Kuldeep Patidar</span>
+    <span>Contact - +91-7828382365</span>
+  </footer>
+</body>
+</html>
